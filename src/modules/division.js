@@ -1,4 +1,4 @@
-import Operation from '../base';
+import Operation from './base';
 
 class Division extends Operation {}
 

@@ -1,4 +1,4 @@
-import Operation from '../base';
+import Operation from './base';
 
 class Multiplication extends Operation {}
 
