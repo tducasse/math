@@ -1,5 +1,5 @@
-import { extend } from '../base';
+import Operation from '../base';
 
-const name = 'division';
+class Division extends Operation {}
 
-export const config = extend({ name });
+export default new Division({ name: 'division' });

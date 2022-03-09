@@ -1,13 +1,15 @@
 import { Box } from '@chakra-ui/react';
 
-const name = 'operation';
+class Operation {
+  name = 'operation';
 
-const Question = () => {
-  return <Box>This is a question</Box>;
-};
+  constructor(config) {
+    this.name = config.name;
+  }
 
-export const extend = (overrides = {}) => ({
-  name,
-  Question,
-  ...overrides,
-});
+  Question = () => {
+    return <Box>This is a question for {this.name}</Box>;
+  };
+}
+
+export default Operation;

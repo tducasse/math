@@ -5,9 +5,12 @@ import * as modules from './modules';
 export const Home = props => {
   const operations = Object.keys(modules);
   const [operation, setOperation] = useState(operations[0]);
+  const [current, setCurrent] = useState(null);
 
   const pickOperation = e => {
-    setOperation(e.target.value);
+    const op = e.target.value;
+    setOperation(op);
+    setCurrent(modules[op].default);
   };
 
   return (
@@ -20,6 +23,7 @@ export const Home = props => {
           </option>
         ))}
       </Select>
+      {current && <current.Question />}
     </Box>
   );
 };
