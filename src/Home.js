@@ -1,13 +1,13 @@
 import { Box, Center, Flex, SimpleGrid } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import { getConfig, moduleNames } from './modules';
+import { modules } from './modules';
 
-export const Home = props => {
+export const Home = () => {
   return (
     <Box flex={1}>
       <Center>
         <SimpleGrid columns={2} spacing={10}>
-          {moduleNames.map(name => (
+          {Object.keys(modules).map(name => (
             <Card key={name} name={name} />
           ))}
         </SimpleGrid>
@@ -17,7 +17,7 @@ export const Home = props => {
 };
 
 const Card = ({ name }) => {
-  const { color } = getConfig(name);
+  const { color } = modules[name];
   const navigate = useNavigate();
   return (
     <Flex

@@ -1,5 +1,8 @@
-import Operation from './base';
+import base from './base';
 
-const division = new Operation({ name: 'division', color: 'red.400' });
+const overrides = {
+  name: 'division',
+  color: 'red.500',
+};
 
-export default division;
+export default base(overrides);
