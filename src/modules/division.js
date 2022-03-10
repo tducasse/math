@@ -1,5 +1,5 @@
 import Operation from './base';
 
-class Division extends Operation {}
+const division = new Operation({ name: 'division', color: 'red.400' });
 
-export default new Division({ name: 'division' });
+export default division;

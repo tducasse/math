@@ -1,5 +1,8 @@
 import Operation from './base';
 
-class Multiplication extends Operation {}
+const multiplication = new Operation({
+  name: 'multiplication',
+  color: 'blue.500',
+});
 
-export default new Multiplication({ name: 'multiplication' });
+export default multiplication;

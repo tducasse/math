@@ -1,6 +1,8 @@
 import multiplication from './multiplication';
 import division from './division';
 
+export const moduleNames = ['multiplication', 'division'];
+
 export const getModule = name => {
   switch (name) {
     case 'multiplication':
@@ -12,6 +14,10 @@ export const getModule = name => {
   }
 };
 
-export const getAllModuleNames = () => {
-  return ['multiplication', 'division'];
+export const getConfig = name => {
+  const module = getModule(name);
+  if (module) {
+    return module.config;
+  }
+  return null;
 };
