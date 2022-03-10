@@ -49,19 +49,14 @@ const base = (overrides = {}) => {
     (({ onSubmit }) => {
       const [first, setFirst] = useState(10);
       const [second, setSecond] = useState(10);
+      const [number, setNumber] = useState(10);
 
-      const onChange = name => val => {
-        switch (name) {
-          case 'first':
-            setFirst(val);
-            break;
-          case 'second':
-            setSecond(val);
-            break;
-          default:
-            break;
-        }
-      };
+      const onChange = name => val =>
+        ({
+          first: setFirst,
+          second: setSecond,
+          number: setNumber,
+        }[name](val));
 
       return (
         <Center>
@@ -85,6 +80,11 @@ const base = (overrides = {}) => {
                   label={secondLabel}
                   value={second}
                   onChange={onChange('second')}
+                />
+                <Number
+                  label={'Number of questions'}
+                  value={number}
+                  onChange={onChange('number')}
                 />
                 <Button type="submit">Start</Button>
               </SimpleGrid>
