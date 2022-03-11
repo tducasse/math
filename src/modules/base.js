@@ -94,6 +94,23 @@ const base = (overrides = {}) => {
       );
     });
 
+  const Play =
+    overrides.Play ||
+    (() => {
+      return (
+        <Center>
+          <Flex flexDir={'column'}>
+            <Heading size="lg" textTransform={'capitalize'}>
+              {name}
+            </Heading>
+            <SimpleGrid spacing={5} py={10}>
+              <Question />
+            </SimpleGrid>
+          </Flex>
+        </Center>
+      );
+    });
+
   return {
     firstLabel,
     secondLabel,
@@ -102,6 +119,7 @@ const base = (overrides = {}) => {
     Question,
     Number,
     Settings,
+    Play,
   };
 };
 

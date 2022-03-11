@@ -1,16 +1,16 @@
-import { Box, Center, Flex, SimpleGrid } from '@chakra-ui/react';
+import { Box, Center, Flex } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import { modules } from './modules';
+import { modules } from '../modules';
 
 export const Home = () => {
   return (
     <Box flex={1}>
       <Center>
-        <SimpleGrid columns={2} spacing={10}>
+        <Flex px={10} flexWrap={'wrap'}>
           {Object.keys(modules).map(name => (
             <Card key={name} name={name} />
           ))}
-        </SimpleGrid>
+        </Flex>
       </Center>
     </Box>
   );
@@ -26,8 +26,10 @@ const Card = ({ name }) => {
       justifyContent="center"
       borderWidth={'1px'}
       borderRadius={'lg'}
-      w={150}
-      h={150}
+      mr={10}
+      mb={10}
+      height={150}
+      width={150}
       bg={color}
       fontSize={'xl'}
       _active={{
@@ -36,7 +38,7 @@ const Card = ({ name }) => {
         color: 'gray.900',
       }}
       onClick={() => {
-        navigate(`/${name}`);
+        navigate(`/${name}/settings`);
       }}
     >
       {name}

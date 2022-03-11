@@ -1,9 +1,10 @@
-import React from 'react';
 import { Box, ChakraProvider, Flex } from '@chakra-ui/react';
-import { Home } from './Home';
-import { theme } from './theme';
+import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Module } from './Module';
+import { Home } from './components/Home';
+import { Play } from './components/Play';
+import { Settings } from './components/Settings';
+import { theme } from './theme';
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
           <Box flex={1} mt={10}>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/:name" element={<Module />} />
+              <Route path="/:name/settings" element={<Settings />} />
+              <Route path="/:name/play" element={<Play />} />
             </Routes>
           </Box>
         </BrowserRouter>
