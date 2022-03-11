@@ -1,11 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { modules } from '../modules';
 
-export const Play = () => {
+export const Play = ({ questions }) => {
   const { name } = useParams();
   const mod = modules[name];
 
-  if (!mod) return null;
-
-  return <mod.Play />;
+  return <mod.Play questions={questions} />;
 };
