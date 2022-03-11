@@ -91,6 +91,7 @@ const base = (overrides = {}) => {
               label={'Answer'}
               onChange={onChange}
               value={answer}
+              mb={1}
             />
             <Keyboard onChange={onChange} value={answer} />
           </Flex>
@@ -100,9 +101,9 @@ const base = (overrides = {}) => {
 
   const NumberComponent =
     overrides.NumberComponent ||
-    (({ label, value, onChange }) => {
+    (({ label, value, onChange, ...rest }) => {
       return (
-        <FormControl>
+        <FormControl {...rest}>
           <FormLabel>{label}</FormLabel>
           <NumberInput value={value} onChange={onChange}>
             <NumberInputField />
